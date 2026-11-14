@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excellence Claims Management | Medical Billing & Revenue Cycle Management</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          spacing: {
+            '4.5': '1.125rem',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Smooth scroll and selection styling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      background-color: #34d399;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[#07111F] text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-[#040B14] text-slate-300 text-xs py-2 px-4 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i> U.S. Nationwide Service Coverage
+        </span>
+        <span class="hidden sm:inline text-slate-700">|</span>
+        <span class="hidden sm:inline text-slate-300">20+ Years Medical Billing & RCM Experience</span>
+      </div>
+      <div class="flex items-center gap-4 flex-wrap justify-center">
+        <a href="tel:+12402125545"
+          class="hover:text-emerald-400 transition flex items-center gap-1.5 font-bold text-white">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-emerald-400"></i> +1 (240) 212-5545
+        </a>
+        <a href="mailto:Claim.carebills@gmail.com" class="hover:text-emerald-400 transition flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i> Claim.carebills@gmail.com
+        </a>
+        <a href="mailto:aijazalircmspeicialist@gmail.com"
+          class="hover:text-emerald-400 transition flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i> aijazalircmspeicialist@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-[#0A1628]/95 backdrop-blur border-b border-slate-800/90 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+      <!-- Logo Branding: Concept 15 - The ECM Data Cluster Globe -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div
+          class="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-[#07111F] shadow-2xl shadow-emerald-500/30 group-hover:scale-105 transition-transform overflow-hidden border border-emerald-400/50 ring-2 ring-emerald-500/20">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.25),_transparent_75%)]">
+          </div>
+          <!-- Custom Concept 15 SVG: Data Cluster Globe + Central Medical Cross + Upward Growth Arrow -->
+          <svg class="w-11 h-11 relative z-10" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ecmGlobeGrad" x1="8" y1="56" x2="56" y2="8" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#0EA5E9" />
+                <stop offset="50%" stop-color="#14B8A6" />
+                <stop offset="100%" stop-color="#34D399" />
+              </linearGradient>
+              <linearGradient id="ecmArrowGrad" x1="12" y1="48" x2="56" y2="12" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2DD4BF" />
+                <stop offset="100%" stop-color="#6EE7B7" />
+              </linearGradient>
+            </defs>
+
+            <!-- Globe Outer Ring & Latitude/Longitude Network Arcs -->
+            <circle cx="30" cy="34" r="21" stroke="url(#ecmGlobeGrad)" stroke-width="2" stroke-dasharray="3 2" />
+            <ellipse cx="30" cy="34" rx="11" ry="21" stroke="url(#ecmGlobeGrad)" stroke-width="1.3"
+              stroke-opacity="0.65" />
+            <ellipse cx="30" cy="34" rx="21" ry="9" stroke="url(#ecmGlobeGrad)" stroke-width="1.3"
+              stroke-opacity="0.65" />
+
+            <!-- Data Network Nodes -->
+            <circle cx="30" cy="13" r="2.2" fill="#34D399" />
+            <circle cx="14" cy="22" r="2" fill="#38BDF8" />
+            <circle cx="48" cy="44" r="2" fill="#34D399" />
+            <circle cx="20" cy="51" r="2" fill="#2DD4BF" />
+            <circle cx="10" cy="36" r="1.8" fill="#34D399" />
+
+            <!-- Central Medical Cross Core -->
+            <path d="M27 21H33V27H39V33H33V39H27V33H21V27H27V21Z" fill="#07111F" stroke="#34D399" stroke-width="2"
+              stroke-linejoin="round" />
+
+            <!-- Upward Financial Growth Trend Arrow -->
+            <path d="M11 47L23 36L31 41L52 17" stroke="#07111F" stroke-width="6" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M11 47L23 36L31 41L52 17" stroke="url(#ecmArrowGrad)" stroke-width="3.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M42 16H53V27" stroke="url(#ecmArrowGrad)" stroke-width="3.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-1">
+            EXCELLENCE <span class="text-emerald-400 font-light">CLAIMS</span>
+          </span>
+          <span class="text-[10px] tracking-wider uppercase font-bold text-emerald-200/90">
+            Medical Billing & Revenue Cycle Management
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-200">
+        <a href="#about" class="hover:text-emerald-400 transition">About Us</a>
+        <a href="#services" class="hover:text-emerald-400 transition">Services & Pricing</a>
+        <a href="#specialties" class="hover:text-emerald-400 transition">Specialties & EHR</a>
+        <a href="#why-us" class="hover:text-emerald-400 transition">Why Choose Us</a>
+        <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+      </nav>
+
+      <!-- CTA Header Button -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#contact"
+          class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 font-extrabold text-sm hover:from-emerald-400 hover:to-teal-500 shadow-lg shadow-emerald-500/25 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+          Free Consultation
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg bg-slate-800 text-slate-200 hover:text-white"
+        aria-label="Toggle Navigation Menu">
+        <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+        <i id="close-icon" data-lucide="x" class="w-6 h-6 hidden"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0A1628] border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+      <a href="#about" class="mobile-nav-link block py-2 text-slate-200 hover:text-emerald-400 font-medium">About Us</a>
+      <a href="#services" class="mobile-nav-link block py-2 text-slate-200 hover:text-emerald-400 font-medium">Services
+        & Pricing</a>
+      <a href="#specialties"
+        class="mobile-nav-link block py-2 text-slate-200 hover:text-emerald-400 font-medium">Specialties & EHR</a>
+      <a href="#why-us" class="mobile-nav-link block py-2 text-slate-200 hover:text-emerald-400 font-medium">Why Choose
+        Us</a>
+      <a href="#contact"
+        class="mobile-nav-link block py-2 text-slate-200 hover:text-emerald-400 font-medium">Contact</a>
+      <a href="#contact"
+        class="mobile-nav-link w-full text-center py-3 rounded-xl bg-emerald-500 text-slate-950 font-black block mt-4 shadow-lg shadow-emerald-500/20">
+        Free Consultation
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section
+    class="relative bg-gradient-to-b from-[#0A1628] via-[#07111F] to-[#07111F] text-white py-20 lg:py-28 border-b border-slate-800/80 overflow-hidden">
+    <!-- Subtle Background Glow Elements -->
+    <div
+      class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[450px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl mx-auto text-center space-y-8">
+
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-emerald-400 text-xs font-black tracking-wide shadow-inner">
+          <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i> Trusted Partner in Medical Billing & RCM
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
+          Delivering Excellence in <span
+            class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Medical
+            Billing</span> & Revenue Cycle Management
+        </h1>
+
+        <p class="text-slate-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
+          Excellence Claims Management is a professional Medical Billing and Revenue Cycle Management company with 20+
+          years of experience providing Medical Billing services to healthcare providers across the United States. We
+          specialize in delivering complete billing solutions that help practices manage revenue efficiently, minimize
+          claim errors, resolve billing challenges, and improve financial performance.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <a href="#contact"
+            class="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 font-black text-base shadow-xl shadow-emerald-500/25 hover:from-emerald-400 hover:to-teal-500 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+            Schedule Free Consultation
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#services"
+            class="px-8 py-4 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold text-base transition shadow-lg">
+            Explore Services & Pricing
+          </a>
+        </div>
+
+        <!-- 4 Core Value Pillars -->
+        <div class="pt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800/80">
+          <div class="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+            <div class="flex items-center justify-center gap-1.5 text-emerald-400 font-black text-xs uppercase mb-1">
+              <i data-lucide="heart-handshake" class="w-4 h-4"></i> Accurate Billing
+            </div>
+            <p class="text-xs text-slate-300 font-medium">Minimizing clean claim rejection rates</p>
+          </div>
+
+          <div class="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+            <div class="flex items-center justify-center gap-1.5 text-teal-400 font-black text-xs uppercase mb-1">
+              <i data-lucide="trending-up" class="w-4 h-4"></i> Maximized Revenue
+            </div>
+            <p class="text-xs text-slate-300 font-medium">Faster collections & aggressive AR recovery</p>
+          </div>
+
+          <div class="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+            <div class="flex items-center justify-center gap-1.5 text-cyan-400 font-black text-xs uppercase mb-1">
+              <i data-lucide="shield-check" class="w-4 h-4"></i> Reliable Support
+            </div>
+            <p class="text-xs text-slate-300 font-medium">Dedicated account management team</p>
+          </div>
+
+          <div class="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+            <div class="flex items-center justify-center gap-1.5 text-blue-400 font-black text-xs uppercase mb-1">
+              <i data-lucide="user-check" class="w-4 h-4"></i> Patient Care Focus
+            </div>
+            <p class="text-xs text-slate-300 font-medium">Less administrative stress for practices</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US / CORE OBJECTIVES SECTION -->
+  <section id="about" class="py-20 bg-[#0A1628] border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto space-y-6">
+
+        <div
+          class="bg-gradient-to-br from-slate-900 via-[#07111F] to-[#0A1628] text-white p-8 sm:p-12 rounded-3xl shadow-2xl border border-emerald-500/30 relative overflow-hidden group">
+          <!-- Background Glow Effect -->
+          <div
+            class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-500">
+          </div>
+
+          <div class="relative z-10 space-y-8">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-inner">
+                <i data-lucide="target" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-sm sm:text-base font-black text-emerald-400 uppercase tracking-widest">Our Core Business
+                Objectives</h4>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6 pt-2">
+              <div
+                class="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                  <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h5 class="text-base sm:text-lg font-black text-white mb-1">Reliable Services</h5>
+                  <p class="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Dependable, accurate
+                    Medical Billing & RCM solutions.</p>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                  <i data-lucide="trending-up" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h5 class="text-base sm:text-lg font-black text-white mb-1">Maximize Cash Flow</h5>
+                  <p class="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Improve practice revenue
+                    cycle performance.</p>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                  <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h5 class="text-base sm:text-lg font-black text-white mb-1">Root Cause Resolution</h5>
+                  <p class="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Resolve claim billing
+                    issues permanently at source.</p>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                  <i data-lucide="file-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h5 class="text-base sm:text-lg font-black text-white mb-1">Full Transparency</h5>
+                  <p class="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Maintain strict accuracy,
+                    transparency & accountability.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES & PRICING SECTION -->
+  <section id="services" class="py-20 bg-[#07111F] border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Services Offered & Transparent
+          Pricing</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          Complete Medical Billing & Credentialing Solutions
+        </h2>
+        <p class="text-slate-400 text-base font-medium">
+          Transparent rate structures with zero hidden fees. We align our success with yours.
+        </p>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="grid lg:grid-cols-2 gap-8 mb-16">
+
+        <!-- Card 1: RCM -->
+        <div
+          class="bg-[#0A1628] rounded-3xl shadow-xl border border-emerald-500/30 overflow-hidden flex flex-col justify-between">
+          <div class="p-8 sm:p-10">
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <span
+                  class="inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-black uppercase mb-2">
+                  Full RCM Service
+                </span>
+                <h3 class="text-2xl font-black text-white">Complete Billing & RCM Services</h3>
+              </div>
+              <div class="text-right">
+                <span class="text-4xl font-black text-emerald-400">3.5%</span>
+                <span class="block text-xs font-semibold text-slate-400">of Insurance Collections</span>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-sm mb-8 pb-6 border-b border-slate-800 leading-relaxed">
+              Comprehensive Medical Billing and Revenue Cycle Management services at a transparent rate of just 3.5% of
+              insurance collections.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-3.5 text-sm">
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Insurance Eligibility & Benefits (VOB)</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Medical Coding</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Charge Entry & Claims Submission</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Electronic Claim Tracking</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Rejection Management & Resolution</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Denial Management</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Payment Posting (ERA/EOB)</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Accounts Receivable (AR) Recovery</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Appeals & Claim Resubmissions</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Prior Authorization Support</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Patient Statements</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Insurance & Payer Communication</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">EFT/ERA Enrollment Support</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                <span class="text-slate-200 text-xs font-medium">Monthly AR Review & Reporting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#07111F] p-6 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-medium">Calculated purely on collected insurance revenue.</span>
+            <a href="#contact"
+              class="px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-black text-xs hover:bg-emerald-400 transition shadow-lg">
+              Select Full RCM
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Credentialing -->
+        <div
+          class="bg-[#0A1628] rounded-3xl shadow-xl border border-slate-800 overflow-hidden flex flex-col justify-between">
+          <div class="p-8 sm:p-10">
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <span
+                  class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-black uppercase mb-2">
+                  Separate Pricing
+                </span>
+                <h3 class="text-2xl font-black text-white">Provider Credentialing & Enrollment</h3>
+              </div>
+              <div class="text-right">
+                <span class="text-2xl font-black text-white">Per Payer</span>
+                <span class="block text-xs font-semibold text-slate-400">Flat Application Rates</span>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-sm mb-8 pb-6 border-b border-slate-800 leading-relaxed">
+              Reliable provider credentialing and insurance enrollment services charged separately from Medical Billing
+              & RCM services.
+            </p>
+
+            <div class="space-y-4 mb-8">
+              <div
+                class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex justify-between items-center shadow-inner">
+                <div>
+                  <h4 class="text-sm font-bold text-white">Commercial Insurance Payers</h4>
+                  <p class="text-xs text-slate-400">Aetna, BCBS, Cigna, Humana, UHC, etc.</p>
+                </div>
+                <span class="text-xl font-black text-emerald-400">$110 <span
+                    class="text-xs text-slate-400 font-normal">/ payer</span></span>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex justify-between items-center shadow-inner">
+                <div>
+                  <h4 class="text-sm font-bold text-white">Medicare & Medicaid</h4>
+                  <p class="text-xs text-slate-400">Government CMS & State Medicaid applications</p>
+                </div>
+                <span class="text-xl font-black text-emerald-400">$200 <span
+                    class="text-xs text-slate-400 font-normal">/ application</span></span>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                <span>Application preparation & submission</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                <span>Enrollment follow-up & payer requirement assistance</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                <span>CAQH profile setup & ongoing maintenance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#07111F] p-6 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-medium">Payer pricing charged separately.</span>
+            <a href="#contact"
+              class="px-5 py-2.5 rounded-xl bg-slate-800 text-white font-black text-xs hover:bg-slate-700 transition border border-slate-700">
+              Enroll Providers
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- INTERACTIVE PRICING CALCULATOR -->
+      <div class="bg-[#0A1628] text-white rounded-3xl p-6 sm:p-10 shadow-2xl mb-12 border border-slate-800">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 border-b border-slate-800 pb-6">
+          <div>
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider">
+              <i data-lucide="calculator" class="w-4 h-4"></i> Interactive Fee Calculator
+            </div>
+            <h3 class="text-2xl font-black text-white mt-1">Estimate Your Monthly RCM & Credentialing Fee</h3>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">
+            Transparent 3.5% Rate
+          </span>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+
+          <!-- Sliders & Inputs -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <div class="flex justify-between text-sm font-bold mb-2">
+                <label for="monthly-collections-range">Estimated Monthly Insurance Collections:</label>
+                <span id="collections-display" class="text-emerald-400 font-black text-lg">$75,000</span>
+              </div>
+              <input id="monthly-collections-range" type="range" min="10000" max="300000" step="5000" value="75000"
+                class="w-full accent-emerald-400 cursor-pointer h-2.5 bg-slate-800 rounded-lg" />
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>$10,000</span>
+                <span>$150,000</span>
+                <span>$300,000+</span>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 shadow-inner">
+                <label for="commercial-payers-input" class="block text-xs font-bold text-slate-300 mb-2">Commercial
+                  Payers ($110/ea):</label>
+                <div class="flex items-center gap-3">
+                  <input id="commercial-payers-input" type="number" min="0" max="20" value="3"
+                    class="w-20 bg-slate-950 border border-slate-700 rounded-lg py-1.5 px-3 text-white text-sm font-black text-center focus:outline-none focus:border-emerald-400" />
+                  <span id="commercial-subtotal" class="text-xs text-slate-400 font-medium">Subtotal: $330.00</span>
+                </div>
+              </div>
+
+              <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 shadow-inner">
+                <label for="medicare-apps-input" class="block text-xs font-bold text-slate-300 mb-2">Medicare/Medicaid
+                  Apps ($200/ea):</label>
+                <div class="flex items-center gap-3">
+                  <input id="medicare-apps-input" type="number" min="0" max="10" value="1"
+                    class="w-20 bg-slate-950 border border-slate-700 rounded-lg py-1.5 px-3 text-white text-sm font-black text-center focus:outline-none focus:border-emerald-400" />
+                  <span id="medicare-subtotal" class="text-xs text-slate-400 font-medium">Subtotal: $200.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Display -->
+          <div
+            class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-[#0A1628] p-6 rounded-2xl border border-emerald-500/30 flex flex-col justify-between shadow-xl">
+            <div>
+              <h4 class="text-xs font-black uppercase tracking-wider text-slate-400 mb-4">Calculated Financial Overview
+              </h4>
+
+              <div class="space-y-3.5 text-sm">
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-800">
+                  <span class="text-slate-300 font-medium">Monthly Billing Fee (3.5%)</span>
+                  <span id="rcm-fee-display" class="font-black text-emerald-400">$2625.00</span>
+                </div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-800">
+                  <span class="text-slate-300 font-medium">Estimated Net Practice Revenue</span>
+                  <span id="net-revenue-display" class="font-black text-teal-400">$72,375</span>
+                </div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-800">
+                  <span class="text-slate-300 font-medium">One-Time Credentialing Fees</span>
+                  <span id="total-cred-fee-display" class="font-black text-white">$530.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800">
+              <p class="text-[11px] text-slate-400 mb-4 font-medium">
+                *Complete RCM includes VOB, charge entry, 24h filing, payment posting, denial resolution, and AR
+                follow-up.
+              </p>
+              <a href="#contact"
+                class="w-full text-center py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm block transition shadow-lg shadow-emerald-500/20">
+                Request Full Practice Quote
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOFTWARE COMPATIBILITY & SPECIALTIES -->
+  <section id="specialties" class="py-20 bg-[#0A1628] border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">EHR Systems & Clinical Domains</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          Billing Software & EHR/EMR Expertise
+        </h2>
+        <p class="text-slate-300 text-base font-medium">
+          Our team has hands-on experience working across a wide range of practice management systems and medical
+          specialties.
+        </p>
+      </div>
+
+      <!-- Software Chips Grid -->
+      <div
+        class="mb-16 bg-gradient-to-br from-slate-900 via-[#07111F] to-[#0A1628] p-8 sm:p-10 rounded-3xl border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+        <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none">
+        </div>
+
+        <h3 class="text-center text-xs sm:text-sm font-black uppercase tracking-widest text-emerald-400 mb-8">
+          Platforms We Seamlessly Integrate & Work With
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Office
+              Ally</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">athenahealth</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Tebra
+              (Kareo)</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">NextGen</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">CollaborateMD</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">ChiroTouch</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">RXNT</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">OpenPM</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">SimplePractice</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">eClinicalWorks
+              (eCW)</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">AdvancedMD</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">TotalMD</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">TherapyNotes</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Alora</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Axess</span>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+            </div>
+            <span
+              class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Advanced
+              Claims</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medical Specialties Grid -->
+      <div
+        class="bg-gradient-to-br from-slate-900 via-[#07111F] to-[#0A1628] p-8 sm:p-10 rounded-3xl border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none">
+        </div>
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-black uppercase tracking-widest mb-3 shadow-inner">
+            <i data-lucide="stethoscope" class="w-4 h-4 text-emerald-400"></i> Clinical Expertise
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            Specialties we Support
+          </h3>
+          <p class="text-sm font-semibold text-slate-300 mt-2 max-w-xl mx-auto leading-relaxed">
+            Specialized coding rules, billing guidelines, and tailored claim workflows across diverse clinical
+            disciplines
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- 1. Mental Health -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="brain" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Mental & Behavioral Health
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Behavioral health assessments, psychotherapy CPT coding, pre-authorizations, and modifier management.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 2. Ambulatory -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="activity" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Ambulatory Billing
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Outpatient procedure coding, ambulatory surgery center billing, and same-day medical service claims.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 3. Telehealth -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="globe" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Telehealth & Telemedicine
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Place of service (POS 02/10) modifier compliance, virtual check-ins, and remote patient monitoring
+                billing.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 4. Primary & Family -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Internal & Family Medicine
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Preventive health visits, chronic care management (CCM), annual wellness visits, and E/M coding.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 5. Emergency -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Emergency & Urgent Care
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                High-volume rapid claims entry, facility & professional fee component splitting, and fast-track
+                submission.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 6. Pain Management -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Pain Management
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Interventional pain procedure coding, toxicology screening billing, and injection pre-authorization
+                tracking.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 7. Allergy -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="briefcase" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Infectious Diseases & Allergy
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Immunotherapy extract coding, skin patch testing CPTs, and complex specialty drug administration
+                billing.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 8. Chiropractic -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="activity" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Chiropractic Billing
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Spinal manipulation CPT codes (98940-98943), active/maintenance care documentation, and X-ray
+                interpretation billing.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 9. Physical Therapy -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Physical Therapy (PT)
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Timed CPT evaluation codes, functional reporting, therapeutic exercises, and modality billing
+                compliance.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 10. Nephrology -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  Nephrology Billing
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Dialysis billing, ESRD monthly capitated payments (MCP), vascular access procedures, and electrolyte
+                disorder management.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+
+          <!-- 11. RPM & CCM -->
+          <div
+            class="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                  <i data-lucide="globe" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  RPM & CCM Programs
+                </h4>
+              </div>
+              <p class="text-xs font-semibold text-slate-300 leading-relaxed">
+                Remote patient monitoring device setup, physiological data transmission time tracking, and chronic care
+                management billing.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+              <span>Support</span>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us" class="py-20 bg-[#07111F] border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">What Sets Us Apart</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          Why Choose Excellence Claims Management?
+        </h2>
+        <p class="text-slate-400 text-base font-medium">
+          At Excellence Claims Management, we go beyond routine billing. We focus on accuracy, accountability, proactive
+          revenue cycle management, and dependable support.
+        </p>
+      </div>
+
+      <!-- Cards with uniform solid background and attractive highlighted glowing border -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">20+ Years
+                Experience</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Decades of combined domain expertise
+                navigating complex U.S. healthcare billing guidelines.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Experienced
+                Billing Team</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Dedicated, certified coders and RCM
+                specialists directly managing your practice's billing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Affordable
+                & Transparent Pricing</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Competitive 3.5% collection rate designed to
+                maximize your net revenue with zero hidden costs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Dedicated
+                Account Support</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Direct single point of contact with swift
+                response times for your administrative staff.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Timely
+                Claim Submission</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Proactive daily charge processing and
+                electronic submission within 24–48 hours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Effective
+                Denial Resolution</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">In-depth root-cause analysis on denied
+                claims to permanently prevent recurring errors.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Consistent
+                AR Follow-Up</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Relentless tracking of unpaid claims over 30
+                days to accelerate cash flow recovery.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Flexible
+                Working Hours</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Operations aligned with U.S. time zones
+                (EST/CST/PST) for real-time collaboration.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Regular
+                Performance Reports</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Monthly financial analytics on collection
+                rates, AR aging, and denial trends.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Free
+                Initial Consultation</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">No-obligation practice audit to assess your
+                current billing health and recovery opportunities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Free
+                Initial Trial</h3>
+              <p class="text-slate-300 text-xs leading-relaxed font-medium">Evaluate our speed, accuracy, and workflow
+                risk-free with a trial period.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trial banner -->
+      <div
+        class="mt-16 bg-gradient-to-r from-slate-900 via-[#0A1628] to-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-emerald-500/30">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase">
+            Risk-Free Evaluation
+          </span>
+          <h3 class="text-2xl font-black">Free Initial Trial Available</h3>
+          <p class="text-slate-300 text-xs max-w-2xl font-medium">
+            Where applicable, we offer a short trial period so practices can evaluate our workflow, communication, and
+            billing support before making a long-term commitment.
+          </p>
+        </div>
+        <a href="#contact"
+          class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm whitespace-nowrap transition shadow-lg shadow-emerald-500/20">
+          Request Free Trial
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT & CONSULTATION SECTION -->
+  <section id="contact" class="py-20 bg-[#0A1628] border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Direct Info -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Let's Connect & Grow
+              Together</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white mt-1 tracking-tight">
+              Get in Touch Today
+            </h2>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed font-medium">
+              Looking for a reliable Medical Billing and Revenue Cycle Management partner? Excellence Claims Management
+              is here to support your practice with comprehensive billing, coding, and credentialing solutions.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="p-4.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-start gap-4 shadow-inner">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wide">Contact US Number</h4>
+                <a href="tel:+12402125545" class="text-base font-black text-white hover:text-emerald-400 transition">
+                  +1 (240) 212-5545
+                </a>
+              </div>
+            </div>
+
+            <div class="p-4.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-start gap-4 shadow-inner">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wide">Business Emails</h4>
+                <a href="mailto:Claim.carebills@gmail.com"
+                  class="text-xs font-black text-white hover:text-emerald-400 block">
+                  Claim.carebills@gmail.com
+                </a>
+                <a href="mailto:aijazalircmspeicialist@gmail.com"
+                  class="text-xs font-black text-white hover:text-emerald-400 block mt-0.5">
+                  aijazalircmspeicialist@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="p-4.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-start gap-4 shadow-inner">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wide">Business Location & Coverage</h4>
+                <p class="text-xs text-slate-300 mt-0.5 font-medium">Service Coverage: United States</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://www.linkedin.com/in/muhammad-a-0b145723a" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-black hover:bg-slate-800 transition border border-slate-700 shadow-md">
+              <i data-lucide="linkedin" class="w-4 h-4 text-emerald-400"></i> Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-7 bg-[#07111F] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800">
+          <h3 class="text-2xl font-black mb-2 text-white">Schedule a Free Initial Consultation</h3>
+          <p class="text-slate-400 text-xs mb-8 font-medium">Discuss your current billing challenges and practice
+            requirements with our team at no initial cost.</p>
+
+          <form id="consultation-form" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1">Full Name *</label>
+                <input type="text" name="name" required placeholder="Dr. Sarah Johnson"
+                  class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1">Email Address *</label>
+                <input type="email" name="email" required placeholder="provider@practice.com"
+                  class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1">Contact Phone *</label>
+                <input type="tel" name="phone" required placeholder="+1 (555) 000-0000"
+                  class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1">Practice / Clinic Name</label>
+                <input type="text" name="practiceName" placeholder="Excellence Wellness Practice"
+                  class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1">Medical Specialty</label>
+                <select name="specialty"
+                  class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer font-medium">
+                  <option value="Mental Health & Behavioral Health">Mental Health & Behavioral Health</option>
+                  <option value="Ambulatory Billing">Ambulatory Billing</option>
+                  <option value="Telehealth & Telemedicine">Telehealth & Telemedicine</option>
+                  <option value="Home Health Agencies">Home Health Agencies</option>
+                  <option value="Internal / Family Medicine">Internal / Family Medicine</option>
+                  <option value="Emergency Medicine">Emergency Medicine</option>
+                  <option value="Pain Management">Pain Management</option>
+                  <option value="Infectious Diseases / Allergy">Infectious Diseases / Allergy</option>
+                  <option value="Other Medical Specialties">Other Medical Specialties</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1">Service Required</label>
+                <select name="service"
+                  class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer font-medium">
+                  <option value="Complete Billing (3.5%)">Complete Billing & RCM (3.5%)</option>
+                  <option value="Provider Credentialing">Provider Credentialing & Enrollment</option>
+                  <option value="Free Initial Trial">Free Initial Trial</option>
+                  <option value="Billing Audit">Billing Audit & Consulting</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Billing Challenges / Message</label>
+              <textarea name="message" rows="4"
+                placeholder="Tell us about your billing software, claim volumes, or denial issues..."
+                class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-black text-sm shadow-xl shadow-emerald-500/25 transition flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i> Get In Touch Today
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK & TESTIMONIALS SECTION -->
+  <section class="py-20 bg-[#07111F] border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Client Feedback & Testimonials</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          What Healthcare Providers Say
+        </h2>
+        <p class="text-slate-400 text-base font-medium">
+          Read feedback from clinics and providers or share your experience working with our billing team.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Feedback Display List -->
+        <div class="lg:col-span-7 space-y-4">
+          <h3 class="text-lg font-black text-white mb-2 flex items-center gap-2">
+            <i data-lucide="award" class="w-5 h-5 text-emerald-400"></i> Recent Provider Reviews
+          </h3>
+
+          <div id="feedback-list" class="space-y-4">
+            <!-- Initial Review 1 -->
+            <div class="bg-[#0A1628] p-6 rounded-2xl border border-slate-800 shadow-lg space-y-3">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="text-sm font-bold text-white">Dr. Robert Vance</h4>
+                  <p class="text-xs text-emerald-400 font-semibold">Vance Behavioral Health</p>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-xs text-slate-400 ml-2">May 2026</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-300 italic font-medium leading-relaxed">
+                "Excellence Claims Management transformed our cash flow. Our clean claim rate is near 98% now!"
+              </p>
+            </div>
+
+            <!-- Initial Review 2 -->
+            <div class="bg-[#0A1628] p-6 rounded-2xl border border-slate-800 shadow-lg space-y-3">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="text-sm font-bold text-white">Dr. Emily Chen</h4>
+                  <p class="text-xs text-emerald-400 font-semibold">Metro Family Practice</p>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-amber-400 text-sm">★</span>
+                  <span class="text-xs text-slate-400 ml-2">April 2026</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-300 italic font-medium leading-relaxed">
+                "Their credentialing team got us paneled with major commercial insurers in record time. Highly
+                recommended!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Feedback Form -->
+        <div class="lg:col-span-5 bg-[#0A1628] p-8 rounded-3xl border border-emerald-500/30 shadow-2xl">
+          <h3 class="text-xl font-black text-white mb-2">Leave Your Feedback</h3>
+          <p class="text-xs text-slate-400 mb-6 font-medium">Share your experience or thoughts with Excellence Claims
+            Management.</p>
+
+          <div id="feedback-success-msg"
+            class="hidden mb-6 p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold text-center">
+            Thank you! Your feedback has been successfully added.
+          </div>
+
+          <form id="feedback-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Your Name / Title *</label>
+              <input id="feedback-name" type="text" required placeholder="Dr. John Doe"
+                class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Practice / Clinic Name</label>
+              <input id="feedback-practice" type="text" placeholder="Advanced Care Clinic"
+                class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Rating</label>
+              <select id="feedback-rating"
+                class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer font-medium">
+                <option value="5">5 Stars - Excellent Service</option>
+                <option value="4">4 Stars - Very Good</option>
+                <option value="3">3 Stars - Good</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Feedback / Comment *</label>
+              <textarea id="feedback-comment" rows="3" required
+                placeholder="How was your experience with our billing and RCM services?"
+                class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm shadow-lg transition">
+              Submit Feedback
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS MODAL -->
+  <div id="consultation-modal"
+    class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+    <div id="modal-card"
+      class="bg-[#0A1628] text-white p-8 rounded-3xl max-w-md w-full border border-emerald-500/40 shadow-2xl space-y-4 text-center">
+      <div
+        class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto shadow-inner">
+        <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+      </div>
+      <h3 class="text-xl font-black text-white">Consultation Request Received</h3>
+      <p class="text-xs text-slate-300 leading-relaxed font-medium">
+        Thank you for contacting Excellence Claims Management! Our billing specialists will review your practice
+        information and respond shortly.
+      </p>
+      <button id="close-modal-btn"
+        class="w-full py-3 rounded-xl bg-emerald-500 text-slate-950 font-black text-xs hover:bg-emerald-400 transition shadow-lg">
+        Close Window
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#040B14] text-slate-400 border-t border-slate-800 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+
+        <div class="space-y-4 md:col-span-1">
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-9 h-9 rounded-xl overflow-hidden bg-[#07111F] border border-emerald-400/40 flex items-center justify-center">
+              <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="34" r="21" stroke="#14B8A6" stroke-width="2.5" stroke-dasharray="3 2" />
+                <path d="M27 21H33V27H39V33H33V39H27V33H21V27H27V21Z" stroke="#34D399" stroke-width="2.5" />
+                <path d="M11 47L23 36L31 41L52 17" stroke="#6EE7B7" stroke-width="3.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M42 16H53V27" stroke="#6EE7B7" stroke-width="3.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <span class="text-lg font-black text-white">EXCELLENCE CLAIMS</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed text-[11px] font-medium">
+            Delivering Excellence in Medical Billing & Revenue Cycle Management across the United States.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Quick Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-emerald-400 transition">About Us</a></li>
+            <li><a href="#services" class="hover:text-emerald-400 transition">Complete RCM (3.5%)</a></li>
+            <li><a href="#services" class="hover:text-emerald-400 transition">Provider Credentialing</a></li>
+            <li><a href="#specialties" class="hover:text-emerald-400 transition">Specialties & EHR</a></li>
+            <li><a href="#why-us" class="hover:text-emerald-400 transition">Why Choose Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Medical Specialties</h4>
+          <ul class="space-y-2 text-[11px] text-slate-300">
+            <li>Mental & Behavioral Health</li>
+            <li>Ambulatory Billing</li>
+            <li>Telehealth & Telemedicine</li>
+            <li>Home Health Agencies</li>
+            <li>Internal & Family Medicine</li>
+            <li>Emergency & Pain Management</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2 text-[11px]">
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Company Details</h4>
+          <p class="text-white font-bold">Phone: +1 (240) 212-5545</p>
+          <p class="text-emerald-400 font-semibold">Claim.carebills@gmail.com</p>
+          <p class="text-emerald-400 font-semibold">aijazalircmspeicialist@gmail.com</p>
+          <p class="text-emerald-400 font-semibold">Service Coverage: United States</p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+        <p>© <span id="copyright-year">2026</span> Excellence Claims Management (ECM). All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/muhammad-a-0b145723a" target="_blank" rel="noopener noreferrer"
+            class="hover:text-emerald-400 flex items-center gap-1 font-semibold">
+            <i data-lucide="linkedin" class="w-3.5 h-3.5 text-emerald-400"></i> LinkedIn
+          </a>
+          <span class="text-slate-800">|</span>
+          <span class="text-slate-400">HIPAA Compliant Workflows</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: FUNCTIONALITY & ICONS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Dynamic copyright year
+      const yearSpan = document.getElementById('copyright-year');
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      // Fallback SVG dictionary for offline resilience
+      const svgFallback = {
+        'globe': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+        'phone-call': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>',
+        'mail': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',
+        'chevron-right': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>',
+        'menu': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>',
+        'x': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>',
+        'award': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.722.52l-4.27-2.245-4.27 2.246a.5.5 0 0 1-.722-.52l1.515-8.526"/><circle cx="12" cy="8" r="6"/></svg>',
+        'arrow-right': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>',
+        'heart-handshake': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.18 0l1.9 1.6a2.11 2.11 0 0 0 2.99 0 2.11 2.11 0 0 0 0-2.98L19.03 5"/></svg>',
+        'trending-up': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>',
+        'shield-check': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>',
+        'user-check': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>',
+        'target': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+        'zap': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>',
+        'file-check': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>',
+        'check-circle-2': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>',
+        'calculator': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>',
+        'building-2': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>',
+        'stethoscope': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>',
+        'brain': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v14"/></svg>',
+        'activity': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+        'briefcase': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>',
+        'check': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+        'map-pin': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>',
+        'linkedin': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
+        'send': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>'
+      };
+
+      function renderIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+        } else {
+          document.querySelectorAll('[data-lucide]').forEach(function (el) {
+            const iconName = el.getAttribute('data-lucide');
+            if (svgFallback[iconName]) {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(svgFallback[iconName], 'image/svg+xml');
+              const svg = doc.querySelector('svg');
+              if (svg) {
+                svg.setAttribute('class', el.getAttribute('class') || '');
+                el.replaceWith(svg);
+              }
+            }
+          });
+        }
+      }
+      renderIcons();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function () {
+          const isOpen = !mobileMenu.classList.contains('hidden');
+          if (isOpen) {
+            mobileMenu.classList.add('hidden');
+            if (menuIcon) menuIcon.classList.remove('hidden');
+            if (closeIcon) closeIcon.classList.add('hidden');
+          } else {
+            mobileMenu.classList.remove('hidden');
+            if (menuIcon) menuIcon.classList.add('hidden');
+            if (closeIcon) closeIcon.classList.remove('hidden');
+          }
+        });
+
+        // Close on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+            if (menuIcon) menuIcon.classList.remove('hidden');
+            if (closeIcon) closeIcon.classList.add('hidden');
+          });
+        });
+      }
+
+      // Interactive Revenue Calculator
+      const collectionsRange = document.getElementById('monthly-collections-range');
+      const commercialPayersInput = document.getElementById('commercial-payers-input');
+      const medicareAppsInput = document.getElementById('medicare-apps-input');
+
+      const collectionsDisplay = document.getElementById('collections-display');
+      const commercialSubtotal = document.getElementById('commercial-subtotal');
+      const medicareSubtotal = document.getElementById('medicare-subtotal');
+      const rcmFeeDisplay = document.getElementById('rcm-fee-display');
+      const netRevenueDisplay = document.getElementById('net-revenue-display');
+      const totalCredFeeDisplay = document.getElementById('total-cred-fee-display');
+
+      function updateCalculator() {
+        const collections = Number(collectionsRange ? collectionsRange.value : 75000);
+        const commPayers = Math.max(0, parseInt(commercialPayersInput ? commercialPayersInput.value : 3) || 0);
+        const medApps = Math.max(0, parseInt(medicareAppsInput ? medicareAppsInput.value : 1) || 0);
+
+        const rcmFee = (collections * 0.035).toFixed(2);
+        const commFee = (commPayers * 110).toFixed(2);
+        const govFee = (medApps * 200).toFixed(2);
+        const totalCred = (parseFloat(commFee) + parseFloat(govFee)).toFixed(2);
+        const netPracticeRevenue = (collections - parseFloat(rcmFee)).toFixed(2);
+
+        if (collectionsDisplay) collectionsDisplay.textContent = '$' + collections.toLocaleString();
+        if (commercialSubtotal) commercialSubtotal.textContent = 'Subtotal: $' + commFee;
+        if (medicareSubtotal) medicareSubtotal.textContent = 'Subtotal: $' + govFee;
+        if (rcmFeeDisplay) rcmFeeDisplay.textContent = '$' + rcmFee;
+        if (netRevenueDisplay) netRevenueDisplay.textContent = '$' + Number(netPracticeRevenue).toLocaleString();
+        if (totalCredFeeDisplay) totalCredFeeDisplay.textContent = '$' + totalCred;
+      }
+
+      if (collectionsRange) collectionsRange.addEventListener('input', updateCalculator);
+      if (commercialPayersInput) commercialPayersInput.addEventListener('input', updateCalculator);
+      if (medicareAppsInput) medicareAppsInput.addEventListener('input', updateCalculator);
+      updateCalculator();
+
+      // Consultation Form & Modal
+      const consultationForm = document.getElementById('consultation-form');
+      const modal = document.getElementById('consultation-modal');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+
+      if (consultationForm && modal) {
+        consultationForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          modal.classList.remove('hidden');
+          consultationForm.reset();
+        });
+      }
+
+      if (closeModalBtn && modal) {
+        closeModalBtn.addEventListener('click', function () {
+          modal.classList.add('hidden');
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+        }
+      });
+
+      // Feedback Form
+      const feedbackForm = document.getElementById('feedback-form');
+      const feedbackList = document.getElementById('feedback-list');
+      const feedbackSuccessMsg = document.getElementById('feedback-success-msg');
+
+      if (feedbackForm && feedbackList) {
+        feedbackForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const nameInput = document.getElementById('feedback-name');
+          const practiceInput = document.getElementById('feedback-practice');
+          const ratingInput = document.getElementById('feedback-rating');
+          const commentInput = document.getElementById('feedback-comment');
+
+          const name = nameInput ? nameInput.value.trim() : '';
+          const practice = practiceInput && practiceInput.value.trim() ? practiceInput.value.trim() : 'Independent Practice';
+          const rating = Number(ratingInput ? ratingInput.value : 5);
+          const comment = commentInput ? commentInput.value.trim() : '';
+
+          if (!name || !comment) return;
+
+          let stars = '';
+          for (let i = 0; i < rating; i++) {
+            stars += '<span class="text-amber-400 text-sm">★</span>';
+          }
+
+          const card = document.createElement('div');
+          card.className = 'bg-[#0A1628] p-6 rounded-2xl border border-slate-800 shadow-lg space-y-3';
+          card.innerHTML = `
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-sm font-bold text-white">${escapeHtml(name)}</h4>
+                <p class="text-xs text-emerald-400 font-semibold">${escapeHtml(practice)}</p>
+              </div>
+              <div class="flex items-center gap-1">
+                ${stars}
+                <span class="text-xs text-slate-400 ml-2">Just now</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-300 italic font-medium leading-relaxed">
+              "${escapeHtml(comment)}"
+            </p>
+          `;
+
+          feedbackList.prepend(card);
+          feedbackForm.reset();
+
+          if (feedbackSuccessMsg) {
+            feedbackSuccessMsg.classList.remove('hidden');
+            setTimeout(function () {
+              feedbackSuccessMsg.classList.add('hidden');
+            }, 4000);
+          }
+        });
+      }
+
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+    });
+  </script>
+</body>
+
+</html>
