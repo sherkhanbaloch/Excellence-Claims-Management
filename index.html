@@ -1482,22 +1482,22 @@
             Thank you! Your feedback has been successfully added.
           </div>
 
-          <form id="feedback-form" class="space-y-4">
+          <form action="https://formspree.io/f/xeagakrl" method="post"  id="feedback--form" class="space-y-4">
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Your Name / Title *</label>
-              <input id="feedback-name" type="text" required placeholder="Dr. John Doe"
+              <input id="feedback-name" name="name" type="text" required placeholder="Dr. John Doe"
                 class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
             </div>
 
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Practice / Clinic Name</label>
-              <input id="feedback-practice" type="text" placeholder="Advanced Care Clinic"
+              <input id="feedback-practice" name="practice" type="text" placeholder="Advanced Care Clinic"
                 class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium" />
             </div>
 
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Rating</label>
-              <select id="feedback-rating"
+              <select id="feedback-rating" name="rating" required
                 class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer font-medium">
                 <option value="5">5 Stars - Excellent Service</option>
                 <option value="4">4 Stars - Very Good</option>
@@ -1507,7 +1507,7 @@
 
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Feedback / Comment *</label>
-              <textarea id="feedback-comment" rows="3" required
+              <textarea id="feedback-comment" name="comment" rows="3" required
                 placeholder="How was your experience with our billing and RCM services?"
                 class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"></textarea>
             </div>
