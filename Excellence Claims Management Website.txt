@@ -1,0 +1,1214 @@
+import React, { useState } from 'react';
+import { 
+  ShieldCheck, 
+  TrendingUp, 
+  Headphones, 
+  HeartHandshake, 
+  CheckCircle2, 
+  DollarSign, 
+  FileCheck, 
+  Activity, 
+  PhoneCall, 
+  Mail, 
+  MapPin, 
+  Globe, 
+  Linkedin, 
+  Clock, 
+  Award, 
+  UserCheck, 
+  BarChart3, 
+  ChevronRight, 
+  Calculator, 
+  Zap, 
+  ArrowRight,
+  Stethoscope,
+  Brain,
+  Home,
+  Briefcase,
+  AlertCircle,
+  Menu,
+  X,
+  Send,
+  Building2,
+  Check,
+  FileText,
+  PieChart,
+  Lock,
+  Layers,
+  Target
+} from 'lucide-react';
+
+export default function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedSpecialty, setSelectedSpecialty] = useState('all');
+  
+  // Interactive Revenue Calculator State
+  const [monthlyCollections, setMonthlyCollections] = useState(75000);
+  const [credentialingPayers, setCredentialingPayers] = useState(3);
+  const [medicareApplications, setMedicareApplications] = useState(1);
+
+  // Form State & Modal
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    practiceName: '',
+    specialty: 'Mental Health & Behavioral Health',
+    service: 'Complete Billing (3.5%)',
+    message: ''
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  // Feedback State
+  const [feedbackList, setFeedbackList] = useState([
+    { name: "Dr. Robert Vance", practice: "Vance Behavioral Health", rating: 5, comment: "Excellence Claims Management transformed our cash flow. Our clean claim rate is near 98% now!", date: "May 2026" },
+    { name: "Dr. Emily Chen", practice: "Metro Family Practice", rating: 5, comment: "Their credentialing team got us paneled with major commercial insurers in record time. Highly recommended!", date: "April 2026" }
+  ]);
+  const [feedbackForm, setFeedbackForm] = useState({ name: '', practice: '', rating: '5', comment: '' });
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    setShowModal(true);
+  };
+
+  const handleFeedbackSubmit = (e) => {
+    e.preventDefault();
+    if (!feedbackForm.name || !feedbackForm.comment) return;
+    setFeedbackList([
+      { 
+        name: feedbackForm.name, 
+        practice: feedbackForm.practice || 'Independent Practice', 
+        rating: Number(feedbackForm.rating), 
+        comment: feedbackForm.comment, 
+        date: 'Just now' 
+      },
+      ...feedbackList
+    ]);
+    setFeedbackForm({ name: '', practice: '', rating: '5', comment: '' });
+    setFeedbackSubmitted(true);
+    setTimeout(() => setFeedbackSubmitted(false), 4000);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setFormSubmitted(false);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      practiceName: '',
+      specialty: 'Mental Health & Behavioral Health',
+      service: 'Complete Billing (3.5%)',
+      message: ''
+    });
+  };
+
+  const specialties = [
+    { id: 'mental', category: 'Mental Health', name: 'Mental & Behavioral Health', icon: Brain, desc: 'Behavioral health assessments, psychotherapy CPT coding, pre-authorizations, and modifier management.' },
+    { id: 'ambulatory', category: 'Specialized Care', name: 'Ambulatory Billing', icon: Activity, desc: 'Outpatient procedure coding, ambulatory surgery center billing, and same-day medical service claims.' },
+    { id: 'telehealth', category: 'Primary & Virtual', name: 'Telehealth & Telemedicine', icon: Globe, desc: 'Place of service (POS 02/10) modifier compliance, virtual check-ins, and remote patient monitoring billing.' },
+    { id: 'primary', category: 'Primary & Virtual', name: 'Internal & Family Medicine', icon: Stethoscope, desc: 'Preventive health visits, chronic care management (CCM), annual wellness visits, and E/M coding.' },
+    { id: 'emergency', category: 'Specialized Care', name: 'Emergency & Urgent Care', icon: Zap, desc: 'High-volume rapid claims entry, facility & professional fee component splitting, and fast-track submission.' },
+    { id: 'pain', category: 'Specialized Care', name: 'Pain Management', icon: ShieldCheck, desc: 'Interventional pain procedure coding, toxicology screening billing, and injection pre-authorization tracking.' },
+    { id: 'allergy', category: 'Specialized Care', name: 'Infectious Diseases & Allergy', icon: Briefcase, desc: 'Immunotherapy extract coding, skin patch testing CPTs, and complex specialty drug administration billing.' },
+    { id: 'chiropractic', category: 'Specialized Care', name: 'Chiropractic Billing', icon: Activity, desc: 'Spinal manipulation CPT codes (98940-98943), active/maintenance care documentation, and X-ray interpretation billing.' },
+    { id: 'pt', category: 'Specialized Care', name: 'Physical Therapy (PT)', icon: Zap, desc: 'Timed CPT evaluation codes, functional reporting, therapeutic exercises, and modality billing compliance.' },
+    { id: 'nephrology', category: 'Specialized Care', name: 'Nephrology Billing', icon: ShieldCheck, desc: 'Dialysis billing, ESRD monthly capitated payments (MCP), vascular access procedures, and electrolyte disorder management.' },
+    { id: 'rpm_ccm', category: 'Primary & Virtual', name: 'RPM & CCM Programs', icon: Globe, desc: 'Remote patient monitoring device setup, physiological data transmission time tracking, and chronic care management billing.' }
+  ];
+
+  const softwareList = [
+    'Office Ally', 'athenahealth', 'Tebra (Kareo)', 'NextGen', 'CollaborateMD', 
+    'ChiroTouch', 'RXNT', 'OpenPM', 'SimplePractice', 'eClinicalWorks (eCW)', 
+    'AdvancedMD', 'TotalMD', 'TherapyNotes', 'Alora', 'Axess', 'Advanced Claims'
+  ];
+
+  const whyChooseUs = [
+    { title: "20+ Years Experience", desc: "Decades of combined domain expertise navigating complex U.S. healthcare billing guidelines." },
+    { title: "Experienced Billing Team", desc: "Dedicated, certified coders and RCM specialists directly managing your practice's billing." },
+    { title: "Affordable & Transparent Pricing", desc: "Competitive 3.5% collection rate designed to maximize your net revenue with zero hidden costs." },
+    { title: "Dedicated Account Support", desc: "Direct single point of contact with swift response times for your administrative staff." },
+    { title: "Timely Claim Submission", desc: "Proactive daily charge processing and electronic submission within 24–48 hours." },
+    { title: "Effective Denial Resolution", desc: "In-depth root-cause analysis on denied claims to permanently prevent recurring errors." },
+    { title: "Consistent AR Follow-Up", desc: "Relentless tracking of unpaid claims over 30 days to accelerate cash flow recovery." },
+    { title: "Flexible Working Hours", desc: "Operations aligned with U.S. time zones (EST/CST/PST) for real-time collaboration." },
+    { title: "Regular Performance Reports", desc: "Monthly financial analytics on collection rates, AR aging, and denial trends." },
+    { title: "Free Initial Consultation", desc: "No-obligation practice audit to assess your current billing health and recovery opportunities." },
+    { title: "Free Initial Trial", desc: "Evaluate our speed, accuracy, and workflow risk-free with a trial period." }
+  ];
+
+  // Calculation Logic
+  const rcmFee = (monthlyCollections * 0.035).toFixed(2);
+  const credCommercialFee = (credentialingPayers * 110).toFixed(2);
+  const credGovFee = (medicareApplications * 200).toFixed(2);
+  const totalCredFee = (parseFloat(credCommercialFee) + parseFloat(credGovFee)).toFixed(2);
+  const netPracticeRevenue = (monthlyCollections - parseFloat(rcmFee)).toFixed(2);
+
+  return (
+    <div className="min-h-screen bg-[#07111F] text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+      
+      {/* TOP ANNOUNCEMENT BAR */}
+      <div className="bg-[#040B14] text-slate-300 text-xs py-2 px-4 border-b border-slate-800/80">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+              <Globe className="w-3.5 h-3.5" /> U.S. Nationwide Service Coverage
+            </span>
+            <span className="hidden sm:inline text-slate-700">|</span>
+            <span className="hidden sm:inline text-slate-300">20+ Years Medical Billing & RCM Experience</span>
+          </div>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <a href="tel:+12402125545" className="hover:text-emerald-400 transition flex items-center gap-1.5 font-bold text-white">
+              <PhoneCall className="w-3.5 h-3.5 text-emerald-400" /> +1 (240) 212-5545
+            </a>
+            <a href="mailto:Claim.carebills@gmail.com" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+              <Mail className="w-3.5 h-3.5 text-emerald-400" /> Claim.carebills@gmail.com
+            </a>
+            <a href="mailto:aijazalircmspeicialist@gmail.com" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+              <Mail className="w-3.5 h-3.5 text-emerald-400" /> aijazalircmspeicialist@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* STICKY HEADER / NAVIGATION */}
+      <header className="sticky top-0 z-40 bg-[#0A1628]/95 backdrop-blur border-b border-slate-800/90 shadow-2xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          
+          {/* Logo Branding: Concept 15 - The ECM Data Cluster Globe */}
+          <a href="#" className="flex items-center gap-3.5 group">
+            <div className="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-[#07111F] shadow-2xl shadow-emerald-500/30 group-hover:scale-105 transition-transform overflow-hidden border border-emerald-400/50 ring-2 ring-emerald-500/20">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.25),_transparent_75%)]"></div>
+              {/* Custom Concept 15 SVG: Data Cluster Globe + Central Medical Cross + Upward Growth Arrow */}
+              <svg className="w-11 h-11 relative z-10" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="ecmGlobeGrad" x1="8" y1="56" x2="56" y2="8" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#0EA5E9" />
+                    <stop offset="50%" stopColor="#14B8A6" />
+                    <stop offset="100%" stopColor="#34D399" />
+                  </linearGradient>
+                  <linearGradient id="ecmArrowGrad" x1="12" y1="48" x2="56" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#2DD4BF" />
+                    <stop offset="100%" stopColor="#6EE7B7" />
+                  </linearGradient>
+                </defs>
+
+                {/* Globe Outer Ring & Latitude/Longitude Network Arcs */}
+                <circle cx="30" cy="34" r="21" stroke="url(#ecmGlobeGrad)" strokeWidth="2" strokeDasharray="3 2" />
+                <ellipse cx="30" cy="34" rx="11" ry="21" stroke="url(#ecmGlobeGrad)" strokeWidth="1.3" strokeOpacity="0.65" />
+                <ellipse cx="30" cy="34" rx="21" ry="9" stroke="url(#ecmGlobeGrad)" strokeWidth="1.3" strokeOpacity="0.65" />
+
+                {/* Data Network Nodes */}
+                <circle cx="30" cy="13" r="2.2" fill="#34D399" />
+                <circle cx="14" cy="22" r="2" fill="#38BDF8" />
+                <circle cx="48" cy="44" r="2" fill="#34D399" />
+                <circle cx="20" cy="51" r="2" fill="#2DD4BF" />
+                <circle cx="10" cy="36" r="1.8" fill="#34D399" />
+
+                {/* Central Medical Cross Core */}
+                <path
+                  d="M27 21H33V27H39V33H33V39H27V33H21V27H27V21Z"
+                  fill="#07111F"
+                  stroke="#34D399"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                />
+
+                {/* Upward Financial Growth Trend Arrow */}
+                <path
+                  d="M11 47L23 36L31 41L52 17"
+                  stroke="#07111F"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M11 47L23 36L31 41L52 17"
+                  stroke="url(#ecmArrowGrad)"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M42 16H53V27"
+                  stroke="url(#ecmArrowGrad)"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-1">
+                EXCELLENCE <span className="text-emerald-400 font-light">CLAIMS</span>
+              </span>
+              <span className="text-[10px] tracking-wider uppercase font-bold text-emerald-200/90">
+                Medical Billing & Revenue Cycle Management
+              </span>
+            </div>
+          </a>
+
+          {/* Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-200">
+            <a href="#about" className="hover:text-emerald-400 transition">About Us</a>
+            <a href="#services" className="hover:text-emerald-400 transition">Services & Pricing</a>
+            <a href="#specialties" className="hover:text-emerald-400 transition">Specialties & EHR</a>
+            <a href="#why-us" className="hover:text-emerald-400 transition">Why Choose Us</a>
+            <a href="#contact" className="hover:text-emerald-400 transition">Contact</a>
+          </nav>
+
+          {/* CTA Header Button */}
+          <div className="hidden sm:flex items-center gap-3">
+            <a 
+              href="#contact" 
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 font-extrabold text-sm hover:from-emerald-400 hover:to-teal-500 shadow-lg shadow-emerald-500/25 transition transform hover:-translate-y-0.5 flex items-center gap-2"
+            >
+              Free Consultation
+              <ChevronRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+            className="lg:hidden p-2 rounded-lg bg-slate-800 text-slate-200 hover:text-white"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-[#0A1628] border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-200 hover:text-emerald-400 font-medium">About Us</a>
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-200 hover:text-emerald-400 font-medium">Services & Pricing</a>
+            <a href="#specialties" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-200 hover:text-emerald-400 font-medium">Specialties & EHR</a>
+            <a href="#why-us" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-200 hover:text-emerald-400 font-medium">Why Choose Us</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-200 hover:text-emerald-400 font-medium">Contact</a>
+            <a 
+              href="#contact" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center py-3 rounded-xl bg-emerald-500 text-slate-950 font-black block mt-4 shadow-lg shadow-emerald-500/20"
+            >
+              Free Consultation
+            </a>
+          </div>
+        )}
+      </header>
+
+      {/* HERO SECTION */}
+      <section className="relative bg-gradient-to-b from-[#0A1628] via-[#07111F] to-[#07111F] text-white py-20 lg:py-28 border-b border-slate-800/80 overflow-hidden">
+        {/* Subtle Background Glow Elements */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[450px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-emerald-400 text-xs font-black tracking-wide shadow-inner">
+              <Award className="w-4 h-4 text-emerald-400" /> Trusted Partner in Medical Billing & RCM
+            </div>
+
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
+              Delivering Excellence in <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Medical Billing</span> & Revenue Cycle Management
+            </h1>
+
+            <p className="text-slate-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
+              Excellence Claims Management is a professional Medical Billing and Revenue Cycle Management company with 20+ years of experience providing Medical Billing services to healthcare providers across the United States. We specialize in delivering complete billing solutions that help practices manage revenue efficiently, minimize claim errors, resolve billing challenges, and improve financial performance.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <a 
+                href="#contact" 
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 font-black text-base shadow-xl shadow-emerald-500/25 hover:from-emerald-400 hover:to-teal-500 transition transform hover:-translate-y-0.5 flex items-center gap-2"
+              >
+                Schedule Free Consultation
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a 
+                href="#services" 
+                className="px-8 py-4 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold text-base transition shadow-lg"
+              >
+                Explore Services & Pricing
+              </a>
+            </div>
+
+            {/* 4 Core Value Pillars */}
+            <div className="pt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800/80">
+              <div className="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+                <div className="flex items-center justify-center gap-1.5 text-emerald-400 font-black text-xs uppercase mb-1">
+                  <HeartHandshake className="w-4 h-4" /> Accurate Billing
+                </div>
+                <p className="text-xs text-slate-300 font-medium">Minimizing clean claim rejection rates</p>
+              </div>
+
+              <div className="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+                <div className="flex items-center justify-center gap-1.5 text-teal-400 font-black text-xs uppercase mb-1">
+                  <TrendingUp className="w-4 h-4" /> Maximized Revenue
+                </div>
+                <p className="text-xs text-slate-300 font-medium">Faster collections & aggressive AR recovery</p>
+              </div>
+
+              <div className="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+                <div className="flex items-center justify-center gap-1.5 text-cyan-400 font-black text-xs uppercase mb-1">
+                  <ShieldCheck className="w-4 h-4" /> Reliable Support
+                </div>
+                <p className="text-xs text-slate-300 font-medium">Dedicated account management team</p>
+              </div>
+
+              <div className="bg-slate-900/70 backdrop-blur p-4.5 rounded-2xl border border-slate-800 text-center shadow-lg">
+                <div className="flex items-center justify-center gap-1.5 text-blue-400 font-black text-xs uppercase mb-1">
+                  <UserCheck className="w-4 h-4" /> Patient Care Focus
+                </div>
+                <p className="text-xs text-slate-300 font-medium">Less administrative stress for practices</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT US / CORE OBJECTIVES SECTION */}
+      <section id="about" className="py-20 bg-[#0A1628] border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto space-y-6">
+
+            <div className="bg-gradient-to-br from-slate-900 via-[#07111F] to-[#0A1628] text-white p-8 sm:p-12 rounded-3xl shadow-2xl border border-emerald-500/30 relative overflow-hidden group">
+              {/* Background Glow Effect */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-500"></div>
+
+              <div className="relative z-10 space-y-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-inner">
+                    <Target className="w-6 h-6" />
+                  </div>
+                  <h4 className="text-sm sm:text-base font-black text-emerald-400 uppercase tracking-widest">Our Core Business Objectives</h4>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6 pt-2">
+                  <div className="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-base sm:text-lg font-black text-white mb-1">Reliable Services</h5>
+                      <p className="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Dependable, accurate Medical Billing & RCM solutions.</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                      <TrendingUp className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-base sm:text-lg font-black text-white mb-1">Maximize Cash Flow</h5>
+                      <p className="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Improve practice revenue cycle performance.</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                      <Zap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-base sm:text-lg font-black text-white mb-1">Root Cause Resolution</h5>
+                      <p className="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Resolve claim billing issues permanently at source.</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-900/80 backdrop-blur border border-slate-800 p-6 rounded-2xl flex items-start gap-4 hover:border-emerald-500 hover:bg-slate-900 transition group/card shadow-lg">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-500 group-hover/card:text-slate-950 transition-colors">
+                      <FileCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-base sm:text-lg font-black text-white mb-1">Full Transparency</h5>
+                      <p className="text-sm sm:text-base font-semibold text-slate-300 leading-relaxed">Maintain strict accuracy, transparency & accountability.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES & PRICING SECTION */}
+      <section id="services" className="py-20 bg-[#07111F] border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-emerald-400 font-bold text-xs uppercase tracking-wider">Services Offered & Transparent Pricing</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Complete Medical Billing & Credentialing Solutions
+            </h2>
+            <p className="text-slate-400 text-base font-medium">
+              Transparent rate structures with zero hidden fees. We align our success with yours.
+            </p>
+          </div>
+
+          {/* Pricing Cards */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            
+            {/* Card 1: RCM */}
+            <div className="bg-[#0A1628] rounded-3xl shadow-xl border border-emerald-500/30 overflow-hidden flex flex-col justify-between">
+              <div className="p-8 sm:p-10">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-black uppercase mb-2">
+                      Full RCM Service
+                    </span>
+                    <h3 className="text-2xl font-black text-white">Complete Billing & RCM Services</h3>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-4xl font-black text-emerald-400">3.5%</span>
+                    <span className="block text-xs font-semibold text-slate-400">of Insurance Collections</span>
+                  </div>
+                </div>
+
+                <p className="text-slate-300 text-sm mb-8 pb-6 border-b border-slate-800 leading-relaxed">
+                  Comprehensive Medical Billing and Revenue Cycle Management services at a transparent rate of just 3.5% of insurance collections.
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-3.5 text-sm">
+                  {[
+                    "Insurance Eligibility & Benefits (VOB)",
+                    "Medical Coding",
+                    "Charge Entry & Claims Submission",
+                    "Electronic Claim Tracking",
+                    "Rejection Management & Resolution",
+                    "Denial Management",
+                    "Payment Posting (ERA/EOB)",
+                    "Accounts Receivable (AR) Recovery",
+                    "Appeals & Claim Resubmissions",
+                    "Prior Authorization Support",
+                    "Patient Statements",
+                    "Insurance & Payer Communication",
+                    "EFT/ERA Enrollment Support",
+                    "Monthly AR Review & Reporting"
+                  ].map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-slate-200 text-xs font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-[#07111F] p-6 border-t border-slate-800 flex items-center justify-between">
+                <span className="text-xs text-slate-400 font-medium">Calculated purely on collected insurance revenue.</span>
+                <a href="#contact" className="px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-black text-xs hover:bg-emerald-400 transition shadow-lg">
+                  Select Full RCM
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2: Credentialing */}
+            <div className="bg-[#0A1628] rounded-3xl shadow-xl border border-slate-800 overflow-hidden flex flex-col justify-between">
+              <div className="p-8 sm:p-10">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-black uppercase mb-2">
+                      Separate Pricing
+                    </span>
+                    <h3 className="text-2xl font-black text-white">Provider Credentialing & Enrollment</h3>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl font-black text-white">Per Payer</span>
+                    <span className="block text-xs font-semibold text-slate-400">Flat Application Rates</span>
+                  </div>
+                </div>
+
+                <p className="text-slate-300 text-sm mb-8 pb-6 border-b border-slate-800 leading-relaxed">
+                  Reliable provider credentialing and insurance enrollment services charged separately from Medical Billing & RCM services.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex justify-between items-center shadow-inner">
+                    <div>
+                      <h4 className="text-sm font-bold text-white">Commercial Insurance Payers</h4>
+                      <p className="text-xs text-slate-400">Aetna, BCBS, Cigna, Humana, UHC, etc.</p>
+                    </div>
+                    <span className="text-xl font-black text-emerald-400">$110 <span className="text-xs text-slate-400 font-normal">/ payer</span></span>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex justify-between items-center shadow-inner">
+                    <div>
+                      <h4 className="text-sm font-bold text-white">Medicare & Medicaid</h4>
+                      <p className="text-xs text-slate-400">Government CMS & State Medicaid applications</p>
+                    </div>
+                    <span className="text-xl font-black text-emerald-400">$200 <span className="text-xs text-slate-400 font-normal">/ application</span></span>
+                  </div>
+                </div>
+
+                <div className="space-y-3 text-xs text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>Application preparation & submission</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>Enrollment follow-up & payer requirement assistance</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>CAQH profile setup & ongoing maintenance</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-[#07111F] p-6 border-t border-slate-800 flex items-center justify-between">
+                <span className="text-xs text-slate-400 font-medium">Payer pricing charged separately.</span>
+                <a href="#contact" className="px-5 py-2.5 rounded-xl bg-slate-800 text-white font-black text-xs hover:bg-slate-700 transition border border-slate-700">
+                  Enroll Providers
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* INTERACTIVE PRICING CALCULATOR */}
+          <div className="bg-[#0A1628] text-white rounded-3xl p-6 sm:p-10 shadow-2xl mb-12 border border-slate-800">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 border-b border-slate-800 pb-6">
+              <div>
+                <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider">
+                  <Calculator className="w-4 h-4" /> Interactive Fee Calculator
+                </div>
+                <h3 className="text-2xl font-black text-white mt-1">Estimate Your Monthly RCM & Credentialing Fee</h3>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">
+                Transparent 3.5% Rate
+              </span>
+            </div>
+
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Sliders */}
+              <div className="lg:col-span-7 space-y-6">
+                <div>
+                  <div className="flex justify-between text-sm font-bold mb-2">
+                    <label>Estimated Monthly Insurance Collections:</label>
+                    <span className="text-emerald-400 font-black text-lg">${monthlyCollections.toLocaleString()}</span>
+                  </div>
+                  <input 
+                    type="range" 
+                    min="10000" 
+                    max="300000" 
+                    step="5000"
+                    value={monthlyCollections} 
+                    onChange={(e) => setMonthlyCollections(Number(e.target.value))}
+                    className="w-full accent-emerald-400 cursor-pointer h-2.5 bg-slate-800 rounded-lg"
+                  />
+                  <div className="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                    <span>$10,000</span>
+                    <span>$150,000</span>
+                    <span>$300,000+</span>
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800 shadow-inner">
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Commercial Payers ($110/ea):</label>
+                    <div className="flex items-center gap-3">
+                      <input 
+                        type="number" 
+                        min="0" 
+                        max="20" 
+                        value={credentialingPayers}
+                        onChange={(e) => setCredentialingPayers(Math.max(0, parseInt(e.target.value) || 0))}
+                        className="w-20 bg-slate-950 border border-slate-700 rounded-lg py-1.5 px-3 text-white text-sm font-black text-center focus:outline-none focus:border-emerald-400"
+                      />
+                      <span className="text-xs text-slate-400 font-medium">Subtotal: ${credCommercialFee}</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800 shadow-inner">
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Medicare/Medicaid Apps ($200/ea):</label>
+                    <div className="flex items-center gap-3">
+                      <input 
+                        type="number" 
+                        min="0" 
+                        max="10" 
+                        value={medicareApplications}
+                        onChange={(e) => setMedicareApplications(Math.max(0, parseInt(e.target.value) || 0))}
+                        className="w-20 bg-slate-950 border border-slate-700 rounded-lg py-1.5 px-3 text-white text-sm font-black text-center focus:outline-none focus:border-emerald-400"
+                      />
+                      <span className="text-xs text-slate-400 font-medium">Subtotal: ${credGovFee}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Summary Display */}
+              <div className="lg:col-span-5 bg-gradient-to-br from-slate-900 to-[#0A1628] p-6 rounded-2xl border border-emerald-500/30 flex flex-col justify-between shadow-xl">
+                <div>
+                  <h4 className="text-xs font-black uppercase tracking-wider text-slate-400 mb-4">Calculated Financial Overview</h4>
+                  
+                  <div className="space-y-3.5 text-sm">
+                    <div className="flex justify-between items-center pb-2.5 border-b border-slate-800">
+                      <span className="text-slate-300 font-medium">Monthly Billing Fee (3.5%)</span>
+                      <span className="font-black text-emerald-400">${rcmFee}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2.5 border-b border-slate-800">
+                      <span className="text-slate-300 font-medium">Estimated Net Practice Revenue</span>
+                      <span className="font-black text-teal-400">${Number(netPracticeRevenue).toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2.5 border-b border-slate-800">
+                      <span className="text-slate-300 font-medium">One-Time Credentialing Fees</span>
+                      <span className="font-black text-white">${totalCredFee}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-slate-800">
+                  <p className="text-[11px] text-slate-400 mb-4 font-medium">
+                    *Complete RCM includes VOB, charge entry, 24h filing, payment posting, denial resolution, and AR follow-up.
+                  </p>
+                  <a href="#contact" className="w-full text-center py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm block transition shadow-lg shadow-emerald-500/20">
+                    Request Full Practice Quote
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* SOFTWARE COMPATIBILITY & SPECIALTIES */}
+      <section id="specialties" className="py-20 bg-[#0A1628] border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-emerald-400 font-bold text-xs uppercase tracking-wider">EHR Systems & Clinical Domains</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Billing Software & EHR/EMR Expertise
+            </h2>
+            <p className="text-slate-300 text-base font-medium">
+              Our team has hands-on experience working across a wide range of practice management systems and medical specialties.
+            </p>
+          </div>
+
+          {/* Software Chips Grid */}
+          <div className="mb-16 bg-gradient-to-br from-slate-900 via-[#07111F] to-[#0A1628] p-8 sm:p-10 rounded-3xl border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+            <div className="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <h3 className="text-center text-xs sm:text-sm font-black uppercase tracking-widest text-emerald-400 mb-8">
+              Platforms We Seamlessly Integrate & Work With
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
+              {softwareList.map((software, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-slate-900/90 backdrop-blur border border-slate-800 px-4.5 py-4 rounded-xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex items-center gap-3"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                    <Building2 className="w-4 h-4" />
+                  </div>
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">{software}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Medical Specialties Grid */}
+          <div className="bg-gradient-to-br from-slate-900 via-[#07111F] to-[#0A1628] p-8 sm:p-10 rounded-3xl border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+            <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-black uppercase tracking-widest mb-3 shadow-inner">
+                <Stethoscope className="w-4 h-4 text-emerald-400" /> Clinical Expertise
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                Specialties we Support
+              </h3>
+              <p className="text-sm font-semibold text-slate-300 mt-2 max-w-xl mx-auto leading-relaxed">
+                Specialized coding rules, billing guidelines, and tailored claim workflows across diverse clinical disciplines
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {specialties.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <div 
+                    key={item.id}
+                    className="bg-slate-900/90 backdrop-blur border border-slate-800 p-5 rounded-2xl shadow-md hover:border-emerald-400 hover:bg-slate-900 transition group flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
+                          <IconComponent className="w-5 h-5" />
+                        </div>
+                        <h4 className="text-sm font-black text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                          {item.name}
+                        </h4>
+                      </div>
+                      <p className="text-xs font-semibold text-slate-300 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-black text-emerald-400">
+                      <span>Support</span>
+                      <Check className="w-4 h-4 text-emerald-400" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section id="why-us" className="py-20 bg-[#07111F] border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-emerald-400 font-bold text-xs uppercase tracking-wider">What Sets Us Apart</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Why Choose Excellence Claims Management?
+            </h2>
+            <p className="text-slate-400 text-base font-medium">
+              At Excellence Claims Management, we go beyond routine billing. We focus on accuracy, accountability, proactive revenue cycle management, and dependable support.
+            </p>
+          </div>
+
+          {/* Cards with uniform solid background and attractive highlighted glowing border */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyChooseUs.map((item, idx) => (
+              <div 
+                key={idx}
+                className="bg-[#0A1628] rounded-2xl p-6 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300 group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition shadow-inner">
+                    <CheckCircle2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">{item.title}</h3>
+                    <p className="text-slate-300 text-xs leading-relaxed font-medium">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Trial banner */}
+          <div className="mt-16 bg-gradient-to-r from-slate-900 via-[#0A1628] to-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-emerald-500/30">
+            <div className="space-y-2 text-center md:text-left">
+              <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase">
+                Risk-Free Evaluation
+              </span>
+              <h3 className="text-2xl font-black">Free Initial Trial Available</h3>
+              <p className="text-slate-300 text-xs max-w-2xl font-medium">
+                Where applicable, we offer a short trial period so practices can evaluate our workflow, communication, and billing support before making a long-term commitment.
+              </p>
+            </div>
+            <a 
+              href="#contact" 
+              className="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm whitespace-nowrap transition shadow-lg shadow-emerald-500/20"
+            >
+              Request Free Trial
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTACT & CONSULTATION SECTION */}
+      <section id="contact" className="py-20 bg-[#0A1628] border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Direct Info */}
+            <div className="lg:col-span-5 space-y-8">
+              <div>
+                <span className="text-emerald-400 font-bold text-xs uppercase tracking-wider">Let's Connect & Grow Together</span>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mt-1 tracking-tight">
+                  Get in Touch Today
+                </h2>
+                <p className="text-slate-300 text-sm mt-3 leading-relaxed font-medium">
+                  Looking for a reliable Medical Billing and Revenue Cycle Management partner? Excellence Claims Management is here to support your practice with comprehensive billing, coding, and credentialing solutions.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="p-4.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-start gap-4 shadow-inner">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                    <PhoneCall className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide">Contact US Number</h4>
+                    <a href="tel:+12402125545" className="text-base font-black text-white hover:text-emerald-400 transition">
+                      +1 (240) 212-5545
+                    </a>
+                  </div>
+                </div>
+
+                <div className="p-4.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-start gap-4 shadow-inner">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide">Business Emails</h4>
+                    <a href="mailto:Claim.carebills@gmail.com" className="text-xs font-black text-white hover:text-emerald-400 block">
+                      Claim.carebills@gmail.com
+                    </a>
+                    <a href="mailto:aijazalircmspeicialist@gmail.com" className="text-xs font-black text-white hover:text-emerald-400 block mt-0.5">
+                      aijazalircmspeicialist@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="p-4.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-start gap-4 shadow-inner">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide">Business Location & Coverage</h4>
+                    <p className="text-xs text-slate-300 mt-0.5 font-medium">Service Coverage: United States</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <a 
+                  href="https://www.linkedin.com/in/muhammad-a-0b145723a" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-black hover:bg-slate-800 transition border border-slate-700 shadow-md"
+                >
+                  <Linkedin className="w-4 h-4 text-emerald-400" /> Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="lg:col-span-7 bg-[#07111F] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800">
+              <h3 className="text-2xl font-black mb-2 text-white">Schedule a Free Initial Consultation</h3>
+              <p className="text-slate-400 text-xs mb-8 font-medium">Discuss your current billing challenges and practice requirements with our team at no initial cost.</p>
+
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-1">Full Name *</label>
+                    <input 
+                      type="text" 
+                      required 
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      placeholder="Dr. Sarah Johnson" 
+                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-1">Email Address *</label>
+                    <input 
+                      type="email" 
+                      required 
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      placeholder="provider@practice.com" 
+                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-1">Contact Phone *</label>
+                    <input 
+                      type="tel" 
+                      required 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      placeholder="+1 (555) 000-0000" 
+                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-1">Practice / Clinic Name</label>
+                    <input 
+                      type="text" 
+                      value={formData.practiceName}
+                      onChange={(e) => setFormData({...formData, practiceName: e.target.value})}
+                      placeholder="Excellence Wellness Practice" 
+                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-1">Medical Specialty</label>
+                    <select 
+                      value={formData.specialty}
+                      onChange={(e) => setFormData({...formData, specialty: e.target.value})}
+                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer font-medium"
+                    >
+                      <option value="Mental Health & Behavioral Health">Mental Health & Behavioral Health</option>
+                      <option value="Ambulatory Billing">Ambulatory Billing</option>
+                      <option value="Telehealth & Telemedicine">Telehealth & Telemedicine</option>
+                      <option value="Home Health Agencies">Home Health Agencies</option>
+                      <option value="Internal / Family Medicine">Internal / Family Medicine</option>
+                      <option value="Emergency Medicine">Emergency Medicine</option>
+                      <option value="Pain Management">Pain Management</option>
+                      <option value="Infectious Diseases / Allergy">Infectious Diseases / Allergy</option>
+                      <option value="Other Medical Specialties">Other Medical Specialties</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-1">Service Required</label>
+                    <select 
+                      value={formData.service}
+                      onChange={(e) => setFormData({...formData, service: e.target.value})}
+                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer font-medium"
+                    >
+                      <option value="Complete Billing (3.5%)">Complete Billing & RCM (3.5%)</option>
+                      <option value="Provider Credentialing">Provider Credentialing & Enrollment</option>
+                      <option value="Free Initial Trial">Free Initial Trial</option>
+                      <option value="Billing Audit">Billing Audit & Consulting</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 mb-1">Billing Challenges / Message</label>
+                  <textarea 
+                    rows="4" 
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    placeholder="Tell us about your billing software, claim volumes, or denial issues..." 
+                    className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-black text-sm shadow-xl shadow-emerald-500/25 transition flex items-center justify-center gap-2"
+                >
+                  <Send className="w-4 h-4" /> Get In Touch Today
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* FEEDBACK & TESTIMONIALS SECTION */}
+      <section className="py-20 bg-[#07111F] border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-emerald-400 font-bold text-xs uppercase tracking-wider">Client Feedback & Testimonials</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              What Healthcare Providers Say
+            </h2>
+            <p className="text-slate-400 text-base font-medium">
+              Read feedback from clinics and providers or share your experience working with our billing team.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Feedback Display List */}
+            <div className="lg:col-span-7 space-y-4">
+              <h3 className="text-lg font-black text-white mb-2 flex items-center gap-2">
+                <Award className="w-5 h-5 text-emerald-400" /> Recent Provider Reviews
+              </h3>
+
+              {feedbackList.map((fb, idx) => (
+                <div key={idx} className="bg-[#0A1628] p-6 rounded-2xl border border-slate-800 shadow-lg space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h4 className="text-sm font-bold text-white">{fb.name}</h4>
+                      <p className="text-xs text-emerald-400 font-semibold">{fb.practice}</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(fb.rating)].map((_, i) => (
+                        <span key={i} className="text-amber-400 text-sm">★</span>
+                      ))}
+                      <span className="text-xs text-slate-400 ml-2">{fb.date}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-300 italic font-medium leading-relaxed">
+                    "{fb.comment}"
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Submit Feedback Form */}
+            <div className="lg:col-span-5 bg-[#0A1628] p-8 rounded-3xl border border-emerald-500/30 shadow-2xl">
+              <h3 className="text-xl font-black text-white mb-2">Leave Your Feedback</h3>
+              <p className="text-xs text-slate-400 mb-6 font-medium">Share your experience or thoughts with Excellence Claims Management.</p>
+
+              {feedbackSubmitted && (
+                <div className="mb-6 p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold text-center">
+                  Thank you! Your feedback has been successfully added.
+                </div>
+              )}
+
+              <form onSubmit={handleFeedbackSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 mb-1">Your Name / Title *</label>
+                  <input 
+                    type="text" 
+                    required 
+                    value={feedbackForm.name}
+                    onChange={(e) => setFeedbackForm({...feedbackForm, name: e.target.value})}
+                    placeholder="Dr. John Doe"
+                    className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 mb-1">Practice / Clinic Name</label>
+                  <input 
+                    type="text" 
+                    value={feedbackForm.practice}
+                    onChange={(e) => setFeedbackForm({...feedbackForm, practice: e.target.value})}
+                    placeholder="Advanced Care Clinic"
+                    className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 mb-1">Rating</label>
+                  <select 
+                    value={feedbackForm.rating}
+                    onChange={(e) => setFeedbackForm({...feedbackForm, rating: e.target.value})}
+                    className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer font-medium"
+                  >
+                    <option value="5">5 Stars - Excellent Service</option>
+                    <option value="4">4 Stars - Very Good</option>
+                    <option value="3">3 Stars - Good</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 mb-1">Feedback / Comment *</label>
+                  <textarea 
+                    rows="3" 
+                    required
+                    value={feedbackForm.comment}
+                    onChange={(e) => setFeedbackForm({...feedbackForm, comment: e.target.value})}
+                    placeholder="How was your experience with our billing and RCM services?"
+                    className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-medium"
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm shadow-lg transition"
+                >
+                  Submit Feedback
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SUCCESS MODAL */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+          <div className="bg-[#0A1628] text-white p-8 rounded-3xl max-w-md w-full border border-emerald-500/40 shadow-2xl space-y-4 text-center">
+            <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto shadow-inner">
+              <CheckCircle2 className="w-10 h-10" />
+            </div>
+            <h3 className="text-xl font-black text-white">Consultation Request Received</h3>
+            <p className="text-xs text-slate-300 leading-relaxed font-medium">
+              Thank you for contacting Excellence Claims Management! Our billing specialists will review your practice information and respond shortly.
+            </p>
+            <button 
+              onClick={closeModal}
+              className="w-full py-3 rounded-xl bg-emerald-500 text-slate-950 font-black text-xs hover:bg-emerald-400 transition shadow-lg"
+            >
+              Close Window
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER */}
+      <footer className="bg-[#040B14] text-slate-400 border-t border-slate-800 text-xs py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+            
+            <div className="space-y-4 md:col-span-1">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl overflow-hidden bg-[#07111F] border border-emerald-400/40 flex items-center justify-center">
+                  <svg className="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="34" r="21" stroke="#14B8A6" strokeWidth="2.5" strokeDasharray="3 2" />
+                    <path d="M27 21H33V27H39V33H33V39H27V33H21V27H27V21Z" stroke="#34D399" strokeWidth="2.5" />
+                    <path d="M11 47L23 36L31 41L52 17" stroke="#6EE7B7" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M42 16H53V27" stroke="#6EE7B7" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <span className="text-lg font-black text-white">EXCELLENCE CLAIMS</span>
+              </div>
+              <p className="text-slate-400 leading-relaxed text-[11px] font-medium">
+                Delivering Excellence in Medical Billing & Revenue Cycle Management across the United States.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Quick Navigation</h4>
+              <ul className="space-y-2">
+                <li><a href="#about" className="hover:text-emerald-400 transition">About Us</a></li>
+                <li><a href="#services" className="hover:text-emerald-400 transition">Complete RCM (3.5%)</a></li>
+                <li><a href="#services" className="hover:text-emerald-400 transition">Provider Credentialing</a></li>
+                <li><a href="#specialties" className="hover:text-emerald-400 transition">Specialties & EHR</a></li>
+                <li><a href="#why-us" className="hover:text-emerald-400 transition">Why Choose Us</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Medical Specialties</h4>
+              <ul className="space-y-2 text-[11px] text-slate-300">
+                <li>Mental & Behavioral Health</li>
+                <li>Ambulatory Billing</li>
+                <li>Telehealth & Telemedicine</li>
+                <li>Home Health Agencies</li>
+                <li>Internal & Family Medicine</li>
+                <li>Emergency & Pain Management</li>
+              </ul>
+            </div>
+
+            <div className="space-y-2 text-[11px]">
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Company Details</h4>
+              <p className="text-white font-bold">Phone: +1 (240) 212-5545</p>
+              <p className="text-emerald-400 font-semibold">Claim.carebills@gmail.com</p>
+              <p className="text-emerald-400 font-semibold">aijazalircmspeicialist@gmail.com</p>
+              <p className="text-emerald-400 font-semibold">Service Coverage: United States</p>
+            </div>
+
+          </div>
+
+          <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+            <p>© {new Date().getFullYear()} Excellence Claims Management (ECM). All rights reserved.</p>
+            <div className="flex items-center gap-4">
+              <a href="https://www.linkedin.com/in/muhammad-a-0b145723a" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 flex items-center gap-1 font-semibold">
+                <Linkedin className="w-3.5 h-3.5 text-emerald-400" /> LinkedIn
+              </a>
+              <span className="text-slate-800">|</span>
+              <span className="text-slate-400">HIPAA Compliant Workflows</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  );
+}
